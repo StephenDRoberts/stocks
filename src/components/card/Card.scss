@@ -1,0 +1,46 @@
+.card {
+    padding: 0;
+    border: 1px solid #4D505E;
+    border-radius: 25px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+
+    .card-header {
+      padding: 20px;
+      background-color: #2F3343;
+      display: flex;
+      align-items: center;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+  
+      .card-header-icon {
+        color: white;
+        margin-right: 12px;
+      }
+  
+      .card-header-title {
+        > * {
+          margin: 0;
+          font-size: 18px;
+        }
+      }
+    }
+  
+    .card-body {
+      padding: 20px;
+      background-color: #131B30;
+      border-bottom-left-radius: 25px;
+      border-bottom-right-radius: 25px;
+      flex: 1 1 auto;
+    }
+  
+    // .card-footer {
+    //   padding: 20px;
+    //   display: flex;
+    //   flex-direction: row-reverse;
+    //   background-color: #131B30;
+    //   border-bottom-left-radius: 25px;
+    //   border-bottom-right-radius: 25px;
+    // }
+  }
