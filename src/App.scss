@@ -3,6 +3,8 @@
   src: url("/Users/sro01/Library/Fonts/roadgeek 2005 series 5wr.ttf")
 } */
 
+@import './style/theme';
+
 .app {
   text-align: center;
   font-family: mulish;
@@ -15,7 +17,7 @@
 }
 
 .app-header {
-  background-image: linear-gradient(to right, #1A355A , #182341);  
+  background-image: linear-gradient(to right, $color-001 , $color-002);  
   min-height: 100vh;
   display: flex;
   flex-direction: column;

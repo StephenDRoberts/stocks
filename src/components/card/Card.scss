@@ -1,6 +1,8 @@
+@import '../../style/theme.scss';
+
 .card {
     padding: 0;
-    border: 1px solid #4D505E;
+    border: 1px solid $color-004;
     border-radius: 25px;
     margin-bottom: 20px;
     display: flex;
@@ -8,7 +10,7 @@
 
     .card-header {
       padding: 20px;
-      background-color: #2F3343;
+      background-color: $color-005;
       display: flex;
       align-items: center;
       border-top-left-radius: 25px;
@@ -29,7 +31,7 @@
   
     .card-body {
       padding: 20px;
-      background-color: #131B30;
+      background-color: $color-003;
       border-bottom-left-radius: 25px;
       border-bottom-right-radius: 25px;
       flex: 1 1 auto;
