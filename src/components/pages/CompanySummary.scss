@@ -1,0 +1,32 @@
+@import '../../style/theme.scss';
+
+
+.company-summary-page {
+//     display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   text-align: left;
+//   padding: 20px
+}
+
+.overview {
+    width: 80%;
+    
+  }
+  
+  .overview-blocks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .financials {
+    width: 80%;
+  }
+  
+  .ratios {
+    width: 80%;
+  }
+  
+  
