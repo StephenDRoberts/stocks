@@ -2,6 +2,8 @@ import React from 'react';
 import Card from '../shared/card/Card';
 import Chart from '../shared/chart/Chart';
 
+import './CompanySummary.scss';
+
 interface CompanySummaryProps {
 
 }
