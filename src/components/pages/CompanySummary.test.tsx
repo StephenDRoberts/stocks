@@ -3,6 +3,10 @@ import { render, waitFor, screen } from '@testing-library/react';
 
 import CompanySummary from './CompanySummary';
 
+jest.mock('react-chartjs-2', () => ({
+    Line: () => null
+}));
+
 test('renders a the correct headings', async () => {
     render(<CompanySummary />)
 
