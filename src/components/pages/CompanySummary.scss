@@ -1,4 +1,4 @@
-@import '../../style/theme.scss';
+@import '../../style/_theme.scss';
 
 
 .company-summary-page {
@@ -12,7 +12,31 @@
 
 .overview {
     width: 80%;
-    
+}
+
+.overview-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.overview-title {
+  margin-bottom: 40px;
+}
+
+.overview-search {
+  margin-top: 1.33em;
+  
+
+  input {
+    background-color: $color-003;
+    color: white;
+  }
+}
+
+  .overview-financials {
+    min-width: 30%;
+    margin-right: 40px;
   }
   
   .overview-blocks {

@@ -1,23 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Card from '../shared/card/Card';
 import Chart from '../shared/chart/Chart';
 
 import './CompanySummary.scss';
+import { InputGroup, Icon } from '@blueprintjs/core';
+import { IconNames } from '@blueprintjs/icons';
+
+
 
 interface CompanySummaryProps {
 
 }
+
 const CompanySummary: React.FC<CompanySummaryProps> = () => {
+    const [nameToSearch, setNameToSearch] = useState('');
+
     return (
-        <section className="company-summary-page">
+        <section className="company-summary-page" data-testid="company-summary-page">
             <section className="overview">
-                <h4 className="overview-title">Overview</h4>
+                <section className="overview-header">
+                    <h4 className="overview-title">Overview</h4>
+                    <InputGroup
+                        type="search"
+                        className="overview-search"
+                        onChange={(ev: any) => setNameToSearch(ev.target.value)}
+                        value={nameToSearch}
+                        placeholder="Search"
+                        leftElement={<Icon icon={IconNames.SEARCH} />}
+                    />
+                </section>
                 <section className="overview-blocks">
-                    <Card
-                        title="Hello World"
-                    >
-                        <p>Hi there!</p>
-                    </Card>
+                    <section className="overview-financials">
+                        <Card
+                            title="Hello World"
+                        >
+                            <p>Hi there!</p>
+                        </Card>
+                    </section>
                     <Chart />
 
                 </section>

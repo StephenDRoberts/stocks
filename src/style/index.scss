@@ -1,0 +1,55 @@
+
+// @import '~@blueprintjs/core/src/reset';
+
+// @import '~@blueprintjs/core/src/reset';
+
+// @import '~@blueprintjs/core/src/typography';
+// @import '~@blueprintjs/core/src/accessibility/focus-states';
+// @import '~@blueprintjs/core/src/components/index';
+
+
+// @import '~@blueprintjs/core/src/typography';
+// @import '~@blueprintjs/core/src/accessibility/focus-states';
+// @import '~@blueprintjs/core/src/components/index';
+
+@import './_theme.scss';
+html,
+body,
+body > #wrapper {
+  min-height: 100%;
+  display: flex;
+  width: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+
+  > div {
+    width: 100%;
+  }
+
+  > #wrapper {
+    main {
+      flex: auto;
+      position: relative;
+    }
+  }
+}
+
+.app {
+  text-align: center;
+  font-family: mulish;
+  color: white;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.app-header {
+  background-image: linear-gradient(to right, $color-001 , $color-002);  
+  min-height: 100vh;
+  padding: 20px
+}
