@@ -31,9 +31,7 @@ const CompanySummary: React.FC<CompanySummaryProps> = () => {
                 </section>
                 <section className="overview-blocks">
                     <section className="overview-financials">
-                        <Card
-                            title="Hello World"
-                        >
+                        <Card>
                             <p>Hi there!</p>
                         </Card>
                     </section>
