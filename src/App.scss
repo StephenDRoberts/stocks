@@ -3,49 +3,5 @@
   src: url("/Users/sro01/Library/Fonts/roadgeek 2005 series 5wr.ttf")
 } */
 
-@import './style/theme';
-
-.app {
-  text-align: center;
-  font-family: mulish;
-  color: white;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.app-header {
-  background-image: linear-gradient(to right, $color-001 , $color-002);  
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: left;
-  padding: 20px
-  // font-size: calc(10px + 2vmin);
-  // color: white;
-}
-
-.overview {
-  width: 80%;
-  
-}
-
-.overview-blocks {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.financials {
-  width: 80%;
-}
-
-.ratios {
-  width: 80%;
-}
 
 
