@@ -8,7 +8,7 @@ import { IconNames } from '@blueprintjs/icons';
 
 import { useGetDailyPrices } from '../shared/hooks/use-queries';
 import { AxiosResponse } from 'axios';
-import { DailyPrice } from '../shared/types';
+import { DailyPrice, APIResponse } from '../shared/types';
 
 // import share_history_dtg from '../../data/SHARE_HISTORY_DTG.json'
 // import epsHistory from '../../data/EPS_HISTORY.json'
@@ -25,15 +25,7 @@ const CompanySummary: React.FC<CompanySummaryProps> = () => {
 
     const [nameToSearch, setNameToSearch] = useState('');
 
-    useEffect(() => {
-
-        if (data) {
-            setDailyPrices(data)
-        }
-    }, [])
-
-    console.log("DailyPrices", dailyPrices)
-    if (!dailyPrices) return <section></section>
+    if (!data) return <section></section>
     return (
         <section className="company-summary-page" data-testid="company-summary-page">
             <section className="overview">
@@ -51,7 +43,7 @@ const CompanySummary: React.FC<CompanySummaryProps> = () => {
                 <section className="overview-blocks">
                     <section className="overview-financials">
                         <Card>
-                            <p>{dailyPrices[0].open}</p>
+                            <p>{data[0].open}</p>
                         </Card>
                     </section>
                     <Chart />

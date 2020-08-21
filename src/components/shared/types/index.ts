@@ -12,3 +12,7 @@ export interface DailyPrice {
     last: number,
     volume: number
 }
+
+export interface APIResponse {
+    results: DailyPrice[]
+}
