@@ -1,31 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { InputGroup, Icon } from '@blueprintjs/core';
+import { IconNames } from '@blueprintjs/icons';
+import { useGetDailyPrices } from '../shared/hooks/use-queries';
 import Card from '../shared/card/Card';
 import Chart from '../shared/chart/Chart';
 
 import './CompanySummary.scss';
-import { InputGroup, Icon } from '@blueprintjs/core';
-import { IconNames } from '@blueprintjs/icons';
 
-import { useGetDailyPrices } from '../shared/hooks/use-queries';
-import { AxiosResponse } from 'axios';
-import { DailyPrice, APIResponse } from '../shared/types';
-
-// import share_history_dtg from '../../data/SHARE_HISTORY_DTG.json'
-// import epsHistory from '../../data/EPS_HISTORY.json'
-
-
-interface CompanySummaryProps {
-
-}
-
-const CompanySummary: React.FC<CompanySummaryProps> = () => {
-    const data = useGetDailyPrices('DTG')
-
-    const [dailyPrices, setDailyPrices] = useState()
-
+const CompanySummary: React.FC = () => {
+    const data = useGetDailyPrices()
     const [nameToSearch, setNameToSearch] = useState('');
 
-    if (!data) return <section></section>
+    if (data.length === 0) return <section></section>
+
     return (
         <section className="company-summary-page" data-testid="company-summary-page">
             <section className="overview">
@@ -43,7 +30,7 @@ const CompanySummary: React.FC<CompanySummaryProps> = () => {
                 <section className="overview-blocks">
                     <section className="overview-financials">
                         <Card>
-                            <p>{data[0].open}</p>
+                            <p className="open">{data[0].open}</p>
                         </Card>
                     </section>
                     <Chart />
