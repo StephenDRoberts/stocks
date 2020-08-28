@@ -30,7 +30,8 @@ const CompanySummary: React.FC = () => {
                 <section className="overview-blocks">
                     <section className="overview-financials">
                         <Card>
-                            <p className="open">{data[0].open}</p>
+                            <p className="financial-title">Close</p>
+                            <p className="financial-value">{data[data.length - 1].last}</p>
                         </Card>
                     </section>
                     <Chart />

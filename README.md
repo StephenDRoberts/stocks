@@ -2,9 +2,9 @@
 
 Tool to plot daily price data against average quarterly earnings data.
 
-App is made with React and Typescript. The code will be deployed to an <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html" target="_blank">AWS S3 bucket</a> for static site hosting. Uses [React-testing-library](https://testing-library.com/docs/react-testing-library/intro) and [jest](https://jestjs.io/) for unit testing purposes.
+App is made with React and Typescript. The code will be deployed to an [AWS S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html) for static site hosting. Uses [React-testing-library](https://testing-library.com/docs/react-testing-library/intro) and [jest](https://jestjs.io/) for unit testing purposes.
 
-Other 
+UI using [BlueprintJs](https://blueprintjs.com/docs/#blueprint).
 
 Things for the future:
 * [Gauge](https://gauge.org/)/[Selenium](https://www.selenium.dev/documentation/en/getting_started/) automated tests
