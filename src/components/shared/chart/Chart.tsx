@@ -85,8 +85,6 @@ const options = {
     }
 }
 
-
-
 interface ChartProps {
     icon?: JSX.Element;
     footer?: JSX.Element;
