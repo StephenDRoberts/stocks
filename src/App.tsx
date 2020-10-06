@@ -1,7 +1,7 @@
-import React from 'react';
-import './App.scss';
+import React from "react";
+import "./App.scss";
 
-import CompanySummary from './components/pages/CompanySummary';
+import CompanySummary from "./components/pages/CompanySummary";
 
 function App() {
   return (
