@@ -13,6 +13,20 @@ export interface DailyPrice {
     volume: number
 }
 
-export interface APIResponse {
+//TODO - Make a generic APIResponse that uses a passed in <T> reference
+export interface DailyPriceAPIResponse {
     results: DailyPrice[]
+}
+
+//TODO - Make a generic APIResponse that uses a passed in <T> reference
+export interface AnnualDataAPIResponse {
+    results: AnnualData[]
+}
+
+export interface AnnualData {
+    incomeStatement: any,
+    cashflowStatement: any,
+    balanceSheet: any,
+    startDate: string,
+    endDate: string
 }

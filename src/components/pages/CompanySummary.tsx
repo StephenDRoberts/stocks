@@ -1,18 +1,35 @@
 import React, { useState } from 'react';
 import { InputGroup, Icon } from '@blueprintjs/core';
 import { IconNames } from '@blueprintjs/icons';
-import { useGetDailyPrices } from '../shared/hooks/use-queries';
+import { useGetDailyPrices, useGetAnnualData } from '../shared/hooks/use-queries';
 import Card from '../shared/card/Card';
 import Chart from '../shared/chart/Chart';
+import IncomeStatement from '../sections/IncomeStatement'
 
 import './CompanySummary.scss';
 
 const CompanySummary: React.FC = () => {
     const data = useGetDailyPrices()
+    const annualData = useGetAnnualData()
+
+    const incomeStatementData = annualData.map(data =>  {
+        const startDate = data.startDate
+        const endDate = data.endDate
+        const originalIncomeStatement = data.incomeStatement
+
+        let incomeStatementWithDates = originalIncomeStatement
+        incomeStatementWithDates.startDate = startDate
+        incomeStatementWithDates.endDate = endDate
+        
+        return incomeStatementWithDates
+    })
+
+console.log("annualData", annualData)
+
     const [nameToSearch, setNameToSearch] = useState('');
 
     if (data.length === 0) return <section></section>
-
+    console.log("data", data)
     return (
         <section className="company-summary-page" data-testid="company-summary-page">
             <section className="overview">
@@ -43,9 +60,9 @@ const CompanySummary: React.FC = () => {
                 <h4 className="financials-title">Financials</h4>
 
                 <Card
-                    title="Hello World"
+                    title="Income Statement"
                 >
-                    <p>Hi there!</p>
+                    <IncomeStatement data={incomeStatementData}/>
                 </Card>
             </section>
 
