@@ -7,9 +7,10 @@ App is made with React and Typescript. The code will be deployed to an [AWS S3 b
 UI using [BlueprintJs](https://blueprintjs.com/docs/#blueprint).
 
 Things for the future:
-* [Gauge](https://gauge.org/)/[Selenium](https://www.selenium.dev/documentation/en/getting_started/) automated tests
-* Deploy to [AWS S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html)
-* Add test coverage library?  
+
+- [Gauge](https://gauge.org/)/[Selenium](https://www.selenium.dev/documentation/en/getting_started/) automated tests
+- Deploy to [AWS S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html)
+- Add test coverage library?
 
 ---
 

@@ -1,4 +1,3 @@
-
 // @import '~@blueprintjs/core/src/reset';
 
 // @import '~@blueprintjs/core/src/reset';
@@ -7,12 +6,11 @@
 // @import '~@blueprintjs/core/src/accessibility/focus-states';
 // @import '~@blueprintjs/core/src/components/index';
 
-
 // @import '~@blueprintjs/core/src/typography';
 // @import '~@blueprintjs/core/src/accessibility/focus-states';
 // @import '~@blueprintjs/core/src/components/index';
 
-@import './_theme.scss';
+@import "./_theme.scss";
 html,
 body,
 body > #wrapper {
@@ -49,7 +47,7 @@ body {
 }
 
 .app-header {
-  background-image: linear-gradient(to right, $color-001 , $color-002);  
+  background-image: linear-gradient(to right, $color-001, $color-002);
   min-height: 100vh;
-  padding: 20px
+  padding: 20px;
 }

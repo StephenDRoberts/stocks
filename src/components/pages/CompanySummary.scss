@@ -1,5 +1,4 @@
-@import '../../style/_theme.scss';
-
+@import "../../style/_theme.scss";
 
 .company-summary-page {
   display: flex;
@@ -10,7 +9,7 @@
 }
 
 .overview {
-    width: 90%;
+  width: 90%;
 }
 
 .overview-header {
@@ -25,7 +24,6 @@
 
 .overview-search {
   margin-top: 1.33em;
-  
 
   input {
     background-color: $color-003;
@@ -33,28 +31,25 @@
   }
 }
 
-  .overview-financials {
-    min-width: 30%;
-    margin-right: 40px;
-  }
-  
-  .overview-blocks {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  
-  .financials {
-    width: 90%;
-  }
-  
-  .ratios {
-    width: 90%;
-  }
+.overview-financials {
+  min-width: 30%;
+  margin-right: 40px;
+}
 
-  .financial-title {
-    color: $color-004;
-  }
+.overview-blocks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
-  
-  
+.financials {
+  width: 90%;
+}
+
+.ratios {
+  width: 90%;
+}
+
+.financial-title {
+  color: $color-004;
+}
