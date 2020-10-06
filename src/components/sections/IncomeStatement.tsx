@@ -16,7 +16,7 @@ const IncomeStatement : React.FC<IncomeStatementProps> = (props) => {
     const generateTableHeaders = (dates: string[]) => {
         const headers = dates.map(date => <th scope="col" className="col-2">{formatDate(date)}</th>)
 
-    return <tr><th></th>{headers}</tr>
+    return <tr key="income-statement-header-row"><th></th>{headers}</tr>
     }
 
     const generateTableData = (data: any[]) => {
@@ -25,19 +25,24 @@ const IncomeStatement : React.FC<IncomeStatementProps> = (props) => {
         const revenue = data.map(x => <td className="col-2">{formatCurrency(x.revenue / 1000000)}</td>)
         const basicEPS = data.map(x => <td className="col-2">{x.earningsPerShare.basic}</td>)
         const dilutedEPS = data.map(x => <td className="col-2">{x.earningsPerShare.diluted}</td>)
-        return <tbody><tr>
+        const netIncome = data.map(x => <td className="col-2">{formatCurrency(x.netIncomeAvailableToCommonShareholders / 1000000)}</td>)
+        return <tbody><tr key="revenue-row">
             <td>Revenue</td>
             {revenue}
             </tr>
-            <tr>
+            <tr key="net-income-row">
+            <td>Net Income</td>
+            {netIncome}
+            </tr>
+            <tr key="ebitda-row">
             <td>EBITDA</td>
             {ebitda}
             </tr>
-            <tr>
+            <tr key="basic-eps-row">
             <td>Basic EPS</td>
             {basicEPS}
             </tr>
-            <tr>
+            <tr key="diluted-eps-row">
             <td>Diluted EPS</td>
             {dilutedEPS}
             </tr>
@@ -48,7 +53,6 @@ const IncomeStatement : React.FC<IncomeStatementProps> = (props) => {
         <thead>
             {generateTableHeaders(dates)}
         </thead>
-        
             {generateTableData(data)}
         
     </table>)
