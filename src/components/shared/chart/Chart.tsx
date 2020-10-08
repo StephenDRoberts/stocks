@@ -4,7 +4,7 @@ import { Line } from "react-chartjs-2";
 import "./Chart.scss";
 
 const data = {
-  labels: ["January", "February", "March", "April", "May", "June", "July"],
+  labels: ["January", "", "", "", "", "", "July"],
   datasets: [
     {
       label: "EPS",

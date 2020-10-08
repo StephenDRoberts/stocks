@@ -8,12 +8,54 @@ import {
 import Card from "../shared/card/Card";
 import Chart from "../shared/chart/Chart";
 import IncomeStatement from "../sections/IncomeStatement";
+import { formatDoubleDigits } from "../utils/formatDoubleDigits";
 
 import "./CompanySummary.scss";
+
+const ONEDAY = 1000 * 60 * 60 * 24;
 
 const CompanySummary: React.FC = () => {
   const data = useGetDailyPrices();
   const annualData = useGetAnnualData();
+  const [nameToSearch, setNameToSearch] = useState("");
+
+  if (!data) return <section></section>;
+
+  let dataWithWeekends = [];
+
+  for (let i = 0; i < data.length; i++) {
+    if (i === data.length - 1) {
+      dataWithWeekends.push(data[i]);
+    } else {
+      const date = new Date(data[i].date);
+
+      const nextDate = new Date(data[i + 1].date).getTime();
+      const dateDifference = (nextDate - date.getTime()) / ONEDAY;
+
+      if (dateDifference > 1) {
+        for (let j = 0; j < dateDifference; j++) {
+          const newDate = new Date(date.getTime() + ONEDAY * j);
+          const newYear = newDate.getUTCFullYear().toString();
+          const newMonth = formatDoubleDigits(newDate.getUTCMonth() + 1);
+          const newDay = formatDoubleDigits(newDate.getUTCDate());
+
+          const weekendEntry = {
+            date: `${newYear}-${newMonth}-${newDay}`,
+            open: data[0].open,
+            high: data[0].high,
+            low: data[0].low,
+            last: data[0].last,
+            volume: data[0].volume,
+          };
+          dataWithWeekends.push(weekendEntry);
+        }
+      } else {
+        dataWithWeekends.push(data[i]);
+      }
+    }
+  }
+
+  console.log(dataWithWeekends);
 
   const incomeStatementData = annualData.map((data) => {
     const startDate = data.startDate;
@@ -27,12 +69,8 @@ const CompanySummary: React.FC = () => {
     return incomeStatementWithDates;
   });
 
-  console.log("annualData", annualData);
-
-  const [nameToSearch, setNameToSearch] = useState("");
-
   if (data.length === 0) return <section></section>;
-  console.log("data", data);
+
   return (
     <section
       className="company-summary-page"

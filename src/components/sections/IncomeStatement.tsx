@@ -52,13 +52,13 @@ const IncomeStatement: React.FC<IncomeStatementProps> = (props) => {
           <td>Revenue</td>
           {revenue}
         </tr>
-        <tr key="net-income-row">
-          <td>Net Income</td>
-          {netIncome}
-        </tr>
         <tr key="ebitda-row">
           <td>EBITDA</td>
           {ebitda}
+        </tr>
+        <tr key="net-income-row">
+          <td>Net Income</td>
+          {netIncome}
         </tr>
         <tr key="basic-eps-row">
           <td>Basic EPS</td>
